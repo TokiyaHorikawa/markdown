@@ -10,7 +10,7 @@ export default {
   name: "home",
   data() {
     return {
-      msg: "Welcom to Mymarkdown test"
+      msg: "Welcom to Mymarkdown"
     }
   }
 }
