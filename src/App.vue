@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <Home v-fi="!isLogin"></Home>
+  <div id="app" class="homeContent">
+    <Home v-if="!isLogin"></Home>
     <Editor v-if="isLogin"></Editor>
   </div>
 </template>
@@ -16,9 +16,25 @@ export default {
       isLogin: false
     }
   },
+  created: function () {
+    firebase.auth().onAuthStateChanged(user => {
+      console.log(user)
+      if (user) {
+        this.isLogin = true
+      } else {
+        this.isLogin = false
+      }
+    })
+  },
   components: {
     Home: Home,
     Editor: Editor
   }
 }
 </script>
+
+<style>
+.homeContent {
+  text-align: center;
+}
+</style>

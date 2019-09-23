@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="homeContent">
+  <div id="home">
     <h1>{{ msg }}</h1>
     <button @click="googleLogin">Googleアカウントでログイン</button>
   </div>
@@ -14,7 +14,7 @@ export default {
     }
   },
   methods: {
-    googleLogin: function () {
+    googleLogin() {
       firebase
         .auth()
         .signInWithRedirect(new firebase.auth.GoogleAuthProvider())
@@ -22,9 +22,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.homeContent {
-  text-align: center;
-}
-</style>
