@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "firebase": "^6.6.2",
-    "firebase-admin": "^8.6.0",
+    "firebase-admin": "^11.4.1",
     "vue": "^2.5.11"
   },
   "browserslist": [
